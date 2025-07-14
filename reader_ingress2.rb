@@ -4,7 +4,7 @@ require_relative 'config.rb' # site config
 require_relative 'common.rb' # common functions
 require_relative 'worker.rb' # sidekiq workers
 
-@log = Logger.new('/home/ubuntu/site-sentinel-box-usb-readers/log/ingress2.txt', 'daily')
+@log = Logger.new('/home/ubuntu/site-sentinel-box-usb-multi-readers/log/ingress2.txt', 'daily')
 @log.datetime_format = "%d-%m-%Y %H:%M:%S"
 
 @log.info "-------------------------------------------"
