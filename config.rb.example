@@ -47,5 +47,5 @@ BUGSNAG_API_KEY = ""
 # -----------------------------------------------
 # DO NOT CHANGE ANYTHING BELOW HERE
 # -----------------------------------------------
-ACCESS_LIST = "/home/ubuntu/site-sentinel-box-usb-readers/access_list.txt"
+ACCESS_LIST = "/home/ubuntu/site-sentinel-box-usb-multi-readers/access_list.txt"
 API_BASE = "https://www.sitesentinel.com.au/api"
