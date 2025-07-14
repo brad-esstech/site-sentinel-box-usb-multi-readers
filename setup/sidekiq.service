@@ -5,8 +5,8 @@ After=syslog.target network.target redis-server.service
 [Service]
 Type=notify
 WatchdogSec=10
-WorkingDirectory=/home/ubuntu/site-sentinel-box-usb-readers
-ExecStart=/bin/bundle exec sidekiq -e production -r /home/ubuntu/site-sentinel-box-usb-readers/worker.rb
+WorkingDirectory=/home/ubuntu/site-sentinel-box-usb-multi-readers
+ExecStart=/bin/bundle exec sidekiq -e production -r /home/ubuntu/site-sentinel-box-usb-multi-readers/worker.rb
 
 # Use `systemctl kill -s TSTP sidekiq` to quiet the Sidekiq process
 User=ubuntu
