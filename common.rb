@@ -180,7 +180,7 @@ def initialise_and_connect_to_ingress2_reader
   
   @log.info "Connecting to reader via SDK..."
   
-  @log.info "Searching for reader with ESN of #{INGREES2_CARD_READER_ESN}..."
+  @log.info "Searching for reader with ESN of #{INGRESS2_CARD_READER_ESN}..."
   ingress2_reader_id = find_device(INGRESS2_CARD_READER_ESN)
   
   if ingress2_reader_id == nil
@@ -294,15 +294,15 @@ def access_granted(card, direction)
 
   if direction == "in"
     @log.debug "firing ingress relay..."
-    in_action = fork { exec("python3 /home/ubuntu/site-sentinel-box-usb-readers/solenoid_ingress.py") }
+    in_action = fork { exec("python3 /home/ubuntu/site-sentinel-box-usb-multi-readers/solenoid_ingress.py") }
     Process.detach(in_action)
   elsif direction == "out"
     @log.debug "firing egress relay..."
-    out_action = fork { exec("python3 /home/ubuntu/site-sentinel-box-usb-readers/solenoid_egress.py") }
+    out_action = fork { exec("python3 /home/ubuntu/site-sentinel-box-usb-multi-readers/solenoid_egress.py") }
     Process.detach(out_action)
   elsif direction == "in2"
     @log.debug "firing ingress2 relay..."
-    out_action = fork { exec("python3 /home/ubuntu/site-sentinel-box-usb-readers/solenoid_ingress2.py") }
+    out_action = fork { exec("python3 /home/ubuntu/site-sentinel-box-usb-multi-readers/solenoid_ingress2.py") }
     Process.detach(out_action)
   end
   access_allowed_beeps
