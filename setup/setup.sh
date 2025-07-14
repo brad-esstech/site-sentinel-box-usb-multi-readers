@@ -44,12 +44,14 @@ sudo udevadm trigger
 echo "Setting up services..."
 sudo cp ~/site-sentinel-box-usb-readers/setup/reader_ingress.service /etc/systemd/system/reader_ingress.service
 sudo cp ~/site-sentinel-box-usb-readers/setup/reader_egress.service /etc/systemd/system/reader_egress.service
+sudo cp ~/site-sentinel-box-usb-readers/setup/reader_egress.service /etc/systemd/system/reader_ingress2.service
 sudo cp ~/site-sentinel-box-usb-readers/setup/sidekiq.service /etc/systemd/system/sidekiq.service
 
 echo "Load, enable and start services..."
 sudo systemctl daemon-reload
 sudo systemctl enable reader_ingress.service
 sudo systemctl enable reader_egress.service
+sudo systemctl enable reader_ingress2.service
 sudo systemctl enable sidekiq.service
 
 echo "Setting up monit..."
