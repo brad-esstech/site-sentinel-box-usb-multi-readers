@@ -10,7 +10,7 @@ response = HTTParty.get(api_url, {
 })
 
 if response.code == 200
-  File.write("/home/ubuntu/site-sentinel-box-usb-readers/access_list.txt", response.body)
+  File.write("/home/ubuntu/site-sentinel-box-usb-multi-readers/access_list.txt", response.body)
 else
   puts "ERROR!"
 end
