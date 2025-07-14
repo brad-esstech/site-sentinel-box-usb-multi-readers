@@ -1,16 +1,16 @@
 [Unit]
-Description=Site Sentinel Box Reader - Ingress2
+Description=Site Sentinel Box Reader - Egress
 Requires=network.target
 
 [Service]
-SyslogIdentifier=reader_ingree2
+SyslogIdentifier=reader_egress
 Type=forking
 User=ubuntu
-PIDFile=/home/ubuntu/site-sentinel-box-usb-readers/pids/reader_ingress2.pid
-WorkingDirectory=/home/ubuntu/site-sentinel-box-usb-readers
-ExecStart=/bin/ruby /home/ubuntu/site-sentinel-box-usb-readers/reader_ingress2_control.rb start
-ExecReload=/bin/ruby /home/ubuntu/site-sentinel-box-usb-readers/reader_ingress2_control.rb restart
-ExecStop=/bin/ruby /home/ubuntu/site-sentinel-box-usb-readers/reader_ingress2_control.rb stop
+PIDFile=/home/ubuntu/site-sentinel-box-usb-multi-readers/pids/reader_egress.pid
+WorkingDirectory=/home/ubuntu/site-sentinel-box-usb-multi-readers
+ExecStart=/bin/ruby /home/ubuntu/site-sentinel-box-usb-multi-readers/reader_egress_control.rb start
+ExecReload=/bin/ruby /home/ubuntu/site-sentinel-box-usb-multi-readers/reader_egress_control.rb restart
+ExecStop=/bin/ruby /home/ubuntu/site-sentinel-box-usb-multi-readers/reader_egress_control.rb stop
 Restart=always
 
 [Install]
